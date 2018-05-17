@@ -4,10 +4,10 @@ require_once('classes/Pokemons.php');
     $pokemon = new Pokemons();
 
     if(isset($_POST['Add'])) {
-        $pokemon->addPokemon('variants');
+        $pokemon->addPokemon('variants', $_POST["id"]);
     }
     if(isset($_POST['Remove'])) {
-        $pokemon->removePokemon('variants');
+        $pokemon->removePokemon('variants', $_POST["id"]);
     }
 
 ?>
@@ -35,7 +35,7 @@ require_once('classes/Pokemons.php');
                 <th>Add / Remove</th>
             </tr>
         <?php
-            $pokemon->showPokemon('variants');
+            echo $pokemon->showPokemon('variants');
         ?>
         </table>
     </body>

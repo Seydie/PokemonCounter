@@ -2,10 +2,6 @@
 
 class Database
 {
-    private $_servername = 'localhost';
-    private $_username = 'root';
-    private $_password = 'root';
-    private $_dbname = 'pokefarm';
     public $mysqli;
 
     function __construct() {
@@ -19,5 +15,6 @@ class Database
 
     public function query($query) {
         $result = $this->mysqli->query($query);
+        return $result;
     }
 }
